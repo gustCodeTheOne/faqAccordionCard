@@ -1,0 +1,188 @@
+/* FAQ ACCORDION V01 COMPLETE */
+/* GENRAL PROPERTIES -----------------------------------------------------------*/
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+@font-face {
+  font-family: "Kumbh Light";
+  src: url("./fonts/Kumbh-Sans/KumbhSans-Light.ttf");
+}
+@font-face {
+  font-family: "Kumbh Regular";
+  src: url("./fonts/Kumbh-Sans/KumbhSans-Regular.ttf");
+}
+@font-face {
+  font-family: "Kumbh Bold";
+  src: url("./fonts/Kumbh-Sans/KumbhSans-Bold.ttf");
+}
+body {
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  background-repeat: repeat-x;
+}
+.content {
+  max-width: 1440px;
+  margin: 0px auto;
+}
+/* END GENRAL PROPERTIES -------------------------------------------------------*/
+
+/* FAQ CONTAINER ---------------------------------------------------------------*/
+.faqContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 872px;
+  margin: 0px auto;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 20px 20px;
+  margin-top: 122px;
+  margin-bottom: 122px;
+  background-image: url("../images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: -500px -250px;
+  box-shadow: 0px 5px 65px #000;
+}
+.imageContainer,
+.accordionContainer {
+  width: 50%;
+  margin-top: 67px;
+  margin-bottom: 75px;
+}
+/* END FAQ CONTAINER -----------------------------------------------------------*/
+
+/* LEFT SIDE OF THE CONTAINER (IMAGE) ------------------------------------------*/
+#box {
+  position: absolute;
+  margin-top: 125px;
+  margin-left: -95px;
+}
+#illustration {
+  max-height: 342px;
+  margin-left: -80px;
+}
+/* END LEFT SIDE OF THE CONTAINER (IMAGE) --------------------------------------*/
+
+/* RIGHT SIDE OF THE CONTAINER (ACORDION) --------------------------------------*/
+.accordionContainer {
+  font-size: 14px;
+}
+.title {
+  font-family: "Kumbh Bold";
+  margin-bottom: 22px;
+  color: hsl(238, 29%, 16%);
+}
+.accordion {
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  font-family: "Kumbh Regular";
+  font-size: 14px;
+  color: hsl(240, 6%, 50%);
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+  cursor: pointer;
+}
+.questionContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 48px;
+  font-family: "Kumbh Regular";
+  color: hsl(240, 6%, 50%);
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 300ms;
+}
+.accordion:hover .questionContainer {
+  color: hsl(14, 88%, 65%);
+}
+.questionContainer:after {
+  content: url("../images/icon-arrow-down.svg");
+  margin-right: 13px;
+}
+.answer {
+  width: 90%;
+  font-size: 11px;
+  margin-bottom: 0px;
+  text-align: left;
+  line-height: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.active {
+  font-family: "Kumbh Bold";
+  color: hsl(237, 12%, 33%);
+}
+.active:after {
+  content: url("../images/icon-arrow-down.svg");
+  transform: rotate(180deg);
+}
+/* END RIGHT SIDE OF THE CONTAINER (ACORDION) ----------------------------------*/
+
+/* MEDIA QUERIES ---------------------------------------------------------------*/
+@media (max-width: 965px) {
+  .faqContainer {
+    flex-direction: column;
+    width: 90%;
+    overflow: visible;
+    align-items: center;
+    background-image: url("../images/bg-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 433px; /*433px 50%*/
+    background-position: 50% 0px;
+    margin-top: 250px;
+  }
+  .imageContainer,
+  .accordionContainer {
+    width: 100%;
+  }
+  .imageContainer {
+    margin-top: 0px;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+  .accordionContainer {
+    margin-bottom: 75px;
+  }
+  #box {
+    position: absolute;
+    margin-top: -83px;
+    margin-left: -25px;
+  }
+  #illustration {
+    margin: 0px auto;
+    margin-top: -203px;
+  }
+  .accordionContainer {
+    font-size: 24px;
+  }
+  .title {
+    text-align: center;
+  }
+  .accordion {
+    width: 90%;
+    margin: 0px auto;
+  }
+}
+@media (max-width: 560px) {
+  .faqContainer {
+    background-size: 239px;
+  }
+  #illustration {
+    height: 180px;
+    margin-top: -108px;
+  }
+  #box {
+    width: 110px;
+    margin-top: -50px;
+    margin-left: -20px;
+  }
+}
+/* END MEDIA QUERIES -----------------------------------------------------------*/
